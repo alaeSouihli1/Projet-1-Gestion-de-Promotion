@@ -2,10 +2,10 @@
 include 'connection.php';
 include 'promotion.php'; 
 
-class promotionDAL{
+class promotionDAL extends Connection{
     public function Afficher(){
         $req="SELECT * from promotion";
-        $res=mysqli_query(getConnection(),$req);
+        $res=mysqli_query($this->getConnection(),$req);
         $promotions=mysqli_fetch_all($res,MYSQLI_ASSOC);
 
         $promotion_Data=array();
@@ -23,14 +23,14 @@ class promotionDAL{
     public function Ajouter($promotion){
         $Name=$promotion->getName();
         $req="INSERT INTO promotion (`name`) values ('$Name') ";
-        mysqli_query(getConnection(),$req);
+        mysqli_query($this->getConnection(),$req);
 
     }
 
     public function Supprimer($id){
 
         $req="DELETE FROM promotion WHERE id=$id";
-        mysqli_query(getConnection(),$req);
+        mysqli_query($this->getConnection(),$req);
 
     }
 
@@ -38,13 +38,13 @@ class promotionDAL{
 
         
         $req="UPDATE promotion SET name='$Name' WHERE id=$id";
-        mysqli_query(getConnection(),$req);
+        mysqli_query($this->getConnection(),$req);
 
     }
 
     public function getOne($id){
         $req="SELECT * FROM promotion WHERE id=$id";
-        $res=mysqli_query(getConnection(),$req);
+        $res=mysqli_query($this->getConnection(),$req);
         $data=mysqli_fetch_all($res,MYSQLI_ASSOC);
 
         foreach($data as $value){
