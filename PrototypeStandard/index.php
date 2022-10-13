@@ -30,7 +30,7 @@ $data=$gestPromo->Afficher();
         <td><?= $value->getName() ?></td>
         <td><?= $value->getId()?></td>
         <td><a href="supprimer.php?id=<?php echo $value->getId()?>"> Supprimer</a></td>
-        <td>Modifier</td>
+        <td><a href="modifier.php?id=<?php echo $value->getId()?>">Modifier</a></td>
     </tr>
     
     </tbody>

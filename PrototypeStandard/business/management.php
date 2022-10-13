@@ -18,5 +18,13 @@ class Management{
         return $this->promotionM->Supprimer($id);
     }
 
+    public function ModifierPromotions($id,$Name){
+        return $this->promotionM->Modifier($id,$Name);
+
+    }
+
+    public function getOnePromotion($id){
+        return $this->promotionM->getOne($id);
+    }
 }
 ?>

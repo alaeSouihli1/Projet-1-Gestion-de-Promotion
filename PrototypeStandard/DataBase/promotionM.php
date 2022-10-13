@@ -28,8 +28,34 @@ class promotionM{
     }
 
     public function Supprimer($id){
+
         $req="DELETE FROM promotion WHERE id=$id";
         mysqli_query(getConnection(),$req);
+
+    }
+
+    public function Modifier($id,$Name){
+
+        
+        $req="UPDATE promotion SET name='$Name' WHERE id=$id";
+        mysqli_query(getConnection(),$req);
+
+    }
+
+    public function getOne($id){
+        $req="SELECT * FROM promotion WHERE id=$id";
+        $res=mysqli_query(getConnection(),$req);
+        $data=mysqli_fetch_all($res,MYSQLI_ASSOC);
+
+        foreach($data as $value){
+            $promotion=new promotion();
+            $promotion->setName($value['Name']);
+            $promotion->setId($value['id']);
+
+        }
+        return $promotion;
+        
+
 
     }
 
