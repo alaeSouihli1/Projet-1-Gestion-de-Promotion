@@ -5,8 +5,7 @@ if(!empty($_POST)){
     $promotion=new promotion();
     $promotion->setName($_POST['name']);
     $gestPromo->Ajouter($promotion);
-    header("location: index.php");
-
+header("location: index.php");
 }
 
 

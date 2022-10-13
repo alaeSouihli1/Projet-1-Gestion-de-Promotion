@@ -1,7 +1,8 @@
 <?php
 include 'connection.php';
 include 'promotion.php'; 
-class promotionM{
+
+class promotionDAL{
     public function Afficher(){
         $req="SELECT * from promotion";
         $res=mysqli_query(getConnection(),$req);
@@ -23,6 +24,38 @@ class promotionM{
         $Name=$promotion->getName();
         $req="INSERT INTO promotion (`name`) values ('$Name') ";
         mysqli_query(getConnection(),$req);
+
+    }
+
+    public function Supprimer($id){
+
+        $req="DELETE FROM promotion WHERE id=$id";
+        mysqli_query(getConnection(),$req);
+
+    }
+
+    public function Modifier($id,$Name){
+
+        
+        $req="UPDATE promotion SET name='$Name' WHERE id=$id";
+        mysqli_query(getConnection(),$req);
+
+    }
+
+    public function getOne($id){
+        $req="SELECT * FROM promotion WHERE id=$id";
+        $res=mysqli_query(getConnection(),$req);
+        $data=mysqli_fetch_all($res,MYSQLI_ASSOC);
+
+        foreach($data as $value){
+            $promotion=new promotion();
+            $promotion->setName($value['Name']);
+            $promotion->setId($value['id']);
+
+        }
+        return $promotion;
+        
+
 
     }
 

@@ -2,7 +2,7 @@
 include 'connection.php';
 include 'promotion.php'; 
 
-class promotionM{
+class promotionDAL{
     public function Afficher(){
         $req="SELECT * from promotion";
         $res=mysqli_query(getConnection(),$req);

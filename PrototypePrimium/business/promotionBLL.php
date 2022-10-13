@@ -1,10 +1,10 @@
 <?php
-include ('DataBase/promotionM.php');
-class Management{
+include ('DataAccess/promotionDAL.php');
+class promotionBLL{
     private $promotionM=NULL;
 
     public function __construct(){
-        $this->promotionM=new promotionM();
+        $this->promotionM=new promotionDAL();
     }
 
     public function AfficherPromotions(){

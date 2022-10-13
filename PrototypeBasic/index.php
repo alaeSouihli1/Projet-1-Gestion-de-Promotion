@@ -1,7 +1,8 @@
 <?php
-include 'business/management.php';
-$gestPromo=new promotionM();
+include 'business/promotionBLL.php';
+$gestPromo=new promotionDAL();
 $data=$gestPromo->Afficher();
+
 
 ?>
 <!DOCTYPE html>
@@ -12,19 +13,27 @@ $data=$gestPromo->Afficher();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    
     <a href="Ajouter.php">Ajouter promo</a>
+    <table>
+        <thead>
     <tr>
         <th>Promotion</th>
         <th>id</th>
     </tr>
+    </thead>
+    <tbody>
     <?php foreach($data as $value) {?>
     <tr>
-        <td><? $value['name']?></td>
-        <td><? $value['id']?></td>
+        <td><?= $value->getName() ?></td>
+        <td><?= $value->getId()?></td>
     </tr>
+    </tbody>
     <?php
     }
     ?>
+</table>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
-include ("business/management.php");
-$gestPromo=new promotionM();
+include ("business/promotionBLL.php");
+$gestPromo=new promotionDAL();
 if(!empty($_POST)){
     $promotion=new promotion();
     $promotion->setName($_POST['name']);
