@@ -23,8 +23,24 @@ if(mysqli_num_rows($result)>0){
             <td><?php echo $id ?></td>
             <td><?php echo $name  ?></td>
             <td>
-                    <a href="Edit.php?id=<?php echo $id?>">Edit</a>
-                    <a href="Delete.php?id=<?php echo $id ?>">Delete</a>
+            <a href="Edit.php?id=<?php echo $id?>" style=" background-color: #4986d1; /* Green */
+            border: none;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 3px;">Edit</a>
+            <a href="Delete.php?id=<?php echo $id ?>" style="background-color: #b52d2d; /* Green */
+            border: none;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 3px;">Delete</a>
           </td>
         </tr>
     

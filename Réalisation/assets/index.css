@@ -1,0 +1,114 @@
+*{
+    font-size: 12pt;
+}
+body{
+    margin: 0;
+}
+
+#section{
+    background-image: url('../assets/background2.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    animation-name:back ;
+    animation-duration:5s ;
+}
+
+a{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+
+
+}
+/* .table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+   
+    
+
+} */
+#container{
+    width: 800px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.79);
+    box-sizing: border-box;
+    border-radius:20px ;
+    padding: 50px 90px;
+}
+.scrollbar{
+    margin: auto;
+    Overflow-y:scroll;
+    height:300px;
+    width:600px;
+
+}
+#ajouter{
+    /* margin-top: 15px;
+    text-decoration: none;
+    color: red;
+    border: none;
+    background-color: red; */
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 3px;
+
+}
+.linkD{
+    background-color: #b52d2d; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 3px;
+
+}
+.linkE{
+    background-color: #4986d1; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 3px;
+
+}
+.linkE:hover, .linkE:active {
+    background-color: #3065a7;
+    color: white;
+    text-decoration: none; 
+  }
+.linkD:hover, .linkD:active {
+    background-color:  #a41f1f;
+    color: white;
+    text-decoration: none; 
+  }
+h3{
+    text-align: center;
+    color: #4986d1;
+}
+#form{
+ text-align: center;
+}
+
+#search{
+    width: 300px;
+    background: rgba(255, 255, 255, 0.692);
+    border: none;
+
+
+
+}
